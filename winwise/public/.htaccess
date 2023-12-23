@@ -1,0 +1,37 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # HTTPでアクセスされた場合、
+    RewriteCond %{HTTPS} off
+    # 以下のURLは常に https にリダイレクトする
+    RewriteCond %{HTTP_HOST} ahagate.com
+    # ただし以下は除く
+    RewriteCond %{REQUEST_URI} !^/assets/.*$
+    RewriteCond %{REQUEST_URI} !^.*\.(js|css|gif|jpg|png|ico)$
+    # https にリダイレクト
+    RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+    order deny,allow
+    deny from all
+    allow from 14.8.115.0/30 # hara router
+    allow from 106.130.130.196 # haruyoshi iphone
+    allow from 192.168.50.1 # local
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
