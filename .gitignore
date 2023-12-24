@@ -1,3 +1,2 @@
 winwise/vendor/
-docker/db/data/mysql.sock
-docker/db/data/ibdata1
+docker/db/data/
