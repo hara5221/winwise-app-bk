@@ -47,3 +47,16 @@ a.btn--green:hover {
   color: #ffffff;
   background: #73d216;
 }
+.mystyle {
+	background-image: url("../images/bgimg.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: contain;
+  width: auto;
+  height: 500px;
+  text-align: center;
+}
+.nav-style {
+  height:50px;
+  
+}

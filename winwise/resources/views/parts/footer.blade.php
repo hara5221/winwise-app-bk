@@ -1,3 +1,3 @@
 <footer>
-	&copy; 2020 XXXX
+	&copy; 2024 XXXX
 </footer>

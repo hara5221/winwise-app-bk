@@ -1,4 +1,4 @@
 <header>
-	<h1>ahagate.com</h1>
+	<h1>Win Wise</h1>
 	@include("parts.nav")
 </header>
