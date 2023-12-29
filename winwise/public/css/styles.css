@@ -4053,6 +4053,7 @@ fieldset:disabled .btn {
     align-items: center;
     justify-content: space-between;
     padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+    color: white;
 }
 
 .navbar>.container,
@@ -4133,6 +4134,13 @@ fieldset:disabled .btn {
     border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
     border-radius: var(--bs-navbar-toggler-border-radius);
     transition: var(--bs-navbar-toggler-transition);
+}
+
+.navbar-auth {
+    color: silver;
+    position: fixed;
+    top: 0px;
+    right: 0px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -11535,9 +11543,9 @@ p {
 }
 
 #mainNav {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: #212529;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgb(0 0 0 / 70%);
 }
 
 #mainNav .navbar-toggler {
@@ -11574,10 +11582,10 @@ p {
 
 @media (min-width: 992px) {
     #mainNav {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-top: 1.0rem;
+        padding-bottom: 1.0rem;
         border: none;
-        background-color: transparent;
+        background-color: rgb(0 0 0 / 50%);
         transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
     }
     #mainNav .navbar-brand {

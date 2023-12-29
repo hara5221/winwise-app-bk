@@ -15,6 +15,8 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
+            <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -31,18 +33,24 @@
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">ログイン</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">新規登録</a></li>
+                        @guest
+                            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">ログイン</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">新規登録</a></li>
+                        @else
+                            <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}">ログアウト</a></li>
+                        @endguest
                     </ul>
                 </div>
             </div>
+            @auth
+                <div class="navbar-auth">【{{ Auth::user()->name }}さん】</div>
+            @endauth
         </nav>
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">競馬予想サイト</div>
                 <div class="masthead-heading text-uppercase">Win Wise</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
             </div>
         </header>
         <!-- Services-->
