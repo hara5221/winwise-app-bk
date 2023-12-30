@@ -51,6 +51,7 @@
             <div class="container">
                 <div class="masthead-subheading">競馬予想サイト</div>
                 <div class="masthead-heading text-uppercase">Win Wise</div>
+                <div class="masthead-mark"><img src='assets/img/horse.png'></div>
             </div>
         </header>
         <!-- Services-->
