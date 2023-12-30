@@ -1,2 +1,3 @@
 winwise/vendor/
+winwise/public/vendor/laravel-admin/
 docker/db/data/
